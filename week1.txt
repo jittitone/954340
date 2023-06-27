@@ -1,0 +1,27 @@
+select product_id, product_name, quantity,
+from product join receipt_detail using (product_id)
+join receipt using (receipt_id)
+order by quantity desc;
+
+select first_name, last_name, total_price,
+from customer join receipt using (customer_id)
+order by total_price desc;
+
+select first_name, last_name, payment
+from customer join receipt using (customer_id)
+join receipt_detail using (receipt_id)
+where payment = "credit card"
+order by first_name;
+
+select receipt_date, total_price
+from receipt
+where total_price > 400;
+
+select customer_id, first_name, last_name
+from customer
+order by customer_id;
+
+
+652110080
+652110091
+652110094 
